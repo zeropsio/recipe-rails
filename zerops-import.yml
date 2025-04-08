@@ -1,0 +1,15 @@
+#yamlPreprocessor=on
+project:
+  name: recipe-rails
+services:
+  - hostname: db
+    type: postgresql@16
+    mode: NON_HA
+  - hostname: app
+    type: ruby@3.4
+    envSecrets:
+      SECRET_KEY_BASE: <@generateRandomString(<32>)>
+    buildFromGit: https://github.com/zeropsio/recipe-rails
+    enableSubdomainAccess: true
+    verticalAutoscaling:
+      minRam: 0.25
