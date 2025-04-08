@@ -7,7 +7,6 @@ zerops:
         RAILS_ENV: production
         BUNDLE_DEPLOYMENT: 1
         BUNDLE_WITHOUT: development
-        BUNDLE_PATH: vendor/bundle
       buildCommands:
         # After permissions fix, use this simple version
         # - bundle install
@@ -28,7 +27,6 @@ zerops:
         RAILS_ENV: production
         BUNDLE_DEPLOYMENT: 1
         BUNDLE_WITHOUT: development
-        BUNDLE_PATH: vendor/bundle
         
         DATABASE_HOST: $db_hostname
         DATABASE_PORT: $db_port
